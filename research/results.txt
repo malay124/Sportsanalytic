@@ -1,0 +1,100 @@
+TEAM GAMES  train 2367  test 1183
+
+A. Predicting the home margin without the betting line (test-set RMSE, lower is better)
+  base: net rating + home court                                  RMSE 14.647  win logloss 0.5990  dMSE vs base  +0.00 [+0.00,+0.00] p=2.000
+  SOS: schedule-adjusted rating (SRS) instead of raw net         RMSE 14.623  win logloss 0.5966  dMSE vs base  -0.70 [-2.16,+0.79] p=0.345
+  SOS: + strength of schedule faced                              RMSE 14.655  win logloss 0.5981  dMSE vs base  +0.21 [-1.07,+1.61] p=0.751
+  rest: + rest days, B2B, 3-in-4, 5-in-7                         RMSE 14.637  win logloss 0.6002  dMSE vs base  -0.30 [-2.80,+2.36] p=0.845
+  bench: + bench net, bench TS%, bench minutes share, depth      RMSE 14.659  win logloss 0.6001  dMSE vs base  +0.34 [-0.49,+1.16] p=0.419
+  usage: + active-roster usage projection, missing regulars      RMSE 14.231  win logloss 0.5832  dMSE vs base -12.03 [-16.55,-7.16] p=0.001
+  everything                                                     RMSE 14.235  win logloss 0.5841  dMSE vs base -11.90 [-17.53,-6.41] p=0.001
+  (reference) closing spread alone                               RMSE 13.891  win logloss 0.5712
+
+   coefficients (all three seasons, HC3 robust), margin model with everything:
+     d_b2b                  -1.852  se 0.731  p=0.0113
+     d_bench_net            -0.105  se 0.076  p=0.1687
+     d_bench_share         -11.297  se 12.790  p=0.3771
+     d_bench_ts             -1.634  se 9.924  p=0.8692
+     d_depth                +0.844  se 0.911  p=0.3542
+     d_five_in_seven        -1.367  se 1.353  p=0.3124
+     d_rest_days            +0.006  se 0.414  p=0.9885
+     d_sos                  -0.124  se 0.296  p=0.6743
+     d_srs                  +0.926  se 0.428  p=0.0304
+     d_three_in_four        -0.411  se 0.473  p=0.3846
+     d_usage_edge           +0.070  se 0.025  p=0.0045
+     d_vac_ppg              -0.089  se 0.011  p=0.0000
+     hca                    +5.499  se 4.564  p=0.2283
+     d_net                  +0.097  se 0.432  p=0.8232
+
+B. Beyond the closing spread: target = margin + spread (ATS result). Zero means the line was right.
+  ATS residual sd 13.69; mean -0.06
+  base: net rating + home court                                  joint Wald p=0.521
+  SOS: schedule-adjusted rating (SRS) instead of raw net         joint Wald p=0.435
+  SOS: + strength of schedule faced                              joint Wald p=0.781
+  rest: + rest days, B2B, 3-in-4, 5-in-7                         joint Wald p=0.719
+  bench: + bench net, bench TS%, bench minutes share, depth      joint Wald p=0.788
+  usage: + active-roster usage projection, missing regulars      joint Wald p=0.119
+   coefficients:
+     d_b2b                  -0.374  se 0.714  p=0.6006
+     d_bench_net            -0.008  se 0.075  p=0.9106
+     d_bench_share          -8.364  se 12.523  p=0.5042
+     d_bench_ts             +1.470  se 9.778  p=0.8805
+     d_depth                +1.045  se 0.894  p=0.2422
+     d_five_in_seven        -1.090  se 1.322  p=0.4095
+     d_rest_days            -0.061  se 0.401  p=0.8783
+     d_sos                  -0.092  se 0.300  p=0.7589
+     d_srs                  +0.331  se 0.425  p=0.4354
+     d_three_in_four        -0.237  se 0.463  p=0.6093
+     d_usage_edge           -0.038  se 0.024  p=0.1156
+     d_vac_ppg              -0.024  se 0.010  p=0.0217
+     hca                    +3.888  se 4.357  p=0.3722
+     d_net                  -0.276  se 0.429  p=0.5210
+  out of sample: MSE change vs 'line is right' +1.13 [-0.43,+2.77] p=0.144
+  ATS picks |pred|>0.0: 605-578 (51.1%), break-even 52.4%, p(beat)=0.811
+  ATS picks |pred|>1.0: 169-179 (48.6%), break-even 52.4%, p(beat)=0.930
+  ATS picks |pred|>2.0: 20-16 (55.6%), break-even 52.4%, p(beat)=0.416
+
+   schedule spots, ATS from the tired team's side (all seasons):
+     home on B2B, away rested     n= 424  tired team straight-up win 46.7%  ATS 191-229 (45.5%)  avg ATS margin -1.54
+     away on B2B, home rested     n= 460  tired team straight-up win 41.5%  ATS 228-231 (49.7%)  avg ATS margin +0.28
+     home 3-in-4, away not        n= 597  tired team straight-up win 52.1%  ATS 292-300 (49.3%)  avg ATS margin -0.75
+     away 3-in-4, home not        n= 626  tired team straight-up win 42.3%  ATS 300-322 (48.2%)  avg ATS margin -0.21
+
+
+PLAYER-GAMES (>= 5 games played, >= 15 mpg)  train 36127  test 18619
+Target: points minus the shrunk season average. Test-set RMSE of points; baseline = season average alone.
+  baseline: shrunk season average                      RMSE 6.578  MAE 5.065
+  opponent team defense (current model's idea)         RMSE 6.551  dMSE -0.351 [-0.498,-0.222] p=0.001
+  matchup: defense vs position                         RMSE 6.553  dMSE -0.325 [-0.593,-0.146] p=0.001
+  matchup: best scorer vs weakest positional D         RMSE 6.538  dMSE -0.527 [-0.812,-0.290] p=0.001
+  usage level                                          RMSE 6.569  dMSE -0.114 [-0.185,-0.041] p=0.002
+  usage: missing teammates' usage redistributed        RMSE 6.459  dMSE -1.554 [-1.989,-1.184] p=0.001
+  rest: back-to-back                                   RMSE 6.575  dMSE -0.044 [-0.137,+0.064] p=0.391
+  all linear                                           RMSE 6.412  dMSE -2.157 [-2.850,-1.593] p=0.001
+  gradient boosting, all features (nonlinear check)    RMSE 6.407  dMSE -2.224 [-3.067,-1.641] p=0.001
+
+   coefficients (all three seasons, HC3 robust), points above season average:
+     b2b            -0.030  se 0.074  p=0.6866
+     dvp            +0.284  se 0.078  p=0.0003
+     eff            -0.336  se 0.027  p=0.0000
+     eff_x_dvp      +0.151  se 0.049  p=0.0021
+     opp_def        +0.068  se 0.011  p=0.0000
+     opp_pace       +0.127  se 0.018  p=0.0000
+     top_at_pos     +0.611  se 0.075  p=0.0000
+     top_x_dvp      +0.386  se 0.122  p=0.0016
+     usg_c          -6.900  se 0.805  p=0.0000
+     vac_min        +0.018  se 0.004  p=0.0000
+     vac_usg        +0.681  se 0.589  p=0.2479
+     vac_x_usg      +5.138  se 2.162  p=0.0175
+
+   does the signal pick overs? test set, over/under the player's season average (not a real prop line):
+     |predicted edge| > 1.0 pts: n= 7809  correct side 59.0%
+     |predicted edge| > 2.0 pts: n= 2439  correct side 64.3%
+     |predicted edge| > 3.0 pts: n=  778  correct side 69.7%
+
+   matchup buckets (test set): actual points above season average
+     dq        best D     2     3     4  worst D
+     eq                                         
+     low eff     0.28  0.28  0.54  0.77     1.24
+     mid eff    -0.62 -0.09  0.07  0.30     0.62
+     high eff   -1.14 -0.29  0.29  0.04     0.56

@@ -1,0 +1,75 @@
+TEAM GAMES: 3550 (all three seasons; a-priori scores fit nothing to outcomes)
+
+== 1a. a-priori score, all 12 situational factors
+  margin, holding team rating fixed: +1.89 pts per 1 sd of score (p=0.0000)
+  vs closing spread:                 +0.46 pts per 1 sd of score (p=0.0439)
+  compounding (signed square term) vs spread: p=0.731
+  by decile of the score (home perspective):
+     1: score  -8.34  n= 355  margin  -3.14  spread said  -2.04  beat spread by -1.10  ATS backing the favored side 187-167 (52.8%) p=0.455
+     2: score  -4.70  n= 355  margin  -1.77  spread said  -0.93  beat spread by -0.85  ATS backing the favored side 177-173 (50.6%) p=0.768
+     3: score  -3.09  n= 355  margin  +0.50  spread said  -0.21  beat spread by +0.71  ATS backing the favored side 179-175 (50.6%) p=0.770
+     4: score  -1.85  n= 355  margin  -0.46  spread said  +0.85  beat spread by -1.31  ATS backing the favored side 183-171 (51.7%) p=0.623
+     5: score  -0.74  n= 355  margin  +1.66  spread said  +1.88  beat spread by -0.22  ATS backing the favored side 185-168 (52.4%) p=0.518
+     6: score  +0.32  n= 355  margin  +3.12  spread said  +2.69  beat spread by +0.43  ATS backing the favored side 182-170 (51.7%) p=0.621
+     7: score  +1.44  n= 355  margin  +2.39  spread said  +2.84  beat spread by -0.45  ATS backing the favored side 175-180 (49.3%) p=0.888
+     8: score  +2.81  n= 355  margin  +5.55  spread said  +4.13  beat spread by +1.41  ATS backing the favored side 194-160 (54.8%) p=0.195
+     9: score  +4.70  n= 355  margin  +5.54  spread said  +4.84  beat spread by +0.70  ATS backing the favored side 186-167 (52.7%) p=0.475
+    10: score  +9.25  n= 355  margin  +5.61  spread said  +5.55  beat spread by +0.05  ATS backing the favored side 180-174 (50.8%) p=0.736
+  most extreme 10% both tails: n=710  ATS 367-341 (51.8%) p=0.629  avg result beyond the spread +0.58 pts
+  most extreme 5% both tails: n=356  ATS 183-171 (51.7%) p=0.623  avg result beyond the spread +0.58 pts
+  most extreme 2% both tails: n=142  ATS 75-66 (53.2%) p=0.457  avg result beyond the spread +1.13 pts
+
+== 1b. a-priori score, schedule + SOS + bench only (no injuries)
+  margin, holding team rating fixed: +0.92 pts per 1 sd of score (p=0.0002)
+  vs closing spread:                 +0.40 pts per 1 sd of score (p=0.0838)
+  compounding (signed square term) vs spread: p=0.652
+  by decile of the score (home perspective):
+     1: score  -7.61  n= 355  margin  -1.08  spread said  +0.55  beat spread by -1.63  ATS backing the favored side 190-163 (53.8%) p=0.312
+     2: score  -4.15  n= 355  margin  +0.45  spread said  +0.45  beat spread by +0.01  ATS backing the favored side 185-167 (52.6%) p=0.495
+     3: score  -2.65  n= 355  margin  +0.30  spread said  +0.99  beat spread by -0.70  ATS backing the favored side 185-170 (52.1%) p=0.562
+     4: score  -1.62  n= 355  margin  +1.02  spread said  +0.63  beat spread by +0.38  ATS backing the favored side 166-186 (47.2%) p=0.978
+     5: score  -0.74  n= 355  margin  +1.74  spread said  +2.04  beat spread by -0.31  ATS backing the favored side 173-182 (48.7%) p=0.924
+     6: score  +0.18  n= 355  margin  +2.61  spread said  +2.94  beat spread by -0.33  ATS backing the favored side 165-187 (46.9%) p=0.983
+     7: score  +1.21  n= 355  margin  +3.81  spread said  +3.05  beat spread by +0.76  ATS backing the favored side 192-160 (54.5%) p=0.224
+     8: score  +2.38  n= 355  margin  +2.47  spread said  +2.51  beat spread by -0.04  ATS backing the favored side 174-180 (49.2%) p=0.898
+     9: score  +4.30  n= 355  margin  +3.90  spread said  +2.65  beat spread by +1.25  ATS backing the favored side 195-159 (55.1%) p=0.167
+    10: score  +8.46  n= 355  margin  +3.79  spread said  +3.81  beat spread by -0.02  ATS backing the favored side 177-177 (50.0%) p=0.829
+  most extreme 10% both tails: n=710  ATS 367-340 (51.9%) p=0.614  avg result beyond the spread +0.80 pts
+  most extreme 5% both tails: n=356  ATS 176-178 (49.7%) p=0.855  avg result beyond the spread +0.25 pts
+  most extreme 2% both tails: n=142  ATS 73-68 (51.8%) p=0.591  avg result beyond the spread -0.13 pts
+
+== 3. stack count: net number of factors favoring home by > 0.5 sd (all 12 factors)
+    -5: n= 198  margin  -5.22  spread said  -3.69  ATS backing the stacked side 112-85 (56.9%) p=0.118
+    -4: n= 164  margin  +0.16  spread said  -0.88  ATS backing the stacked side 69-95 (42.1%) p=0.997
+    -3: n= 286  margin  -2.00  spread said  -1.03  ATS backing the stacked side 147-135 (52.1%) p=0.558
+    -2: n= 376  margin  -1.55  spread said  -0.08  ATS backing the stacked side 196-178 (52.4%) p=0.517
+    -1: n= 428  margin  +0.69  spread said  +0.93  ATS backing the stacked side 222-206 (51.9%) p=0.603
+    +0: n= 490  margin  +0.59  spread said  +1.41  
+    +1: n= 453  margin  +4.18  spread said  +3.14  ATS backing the stacked side 237-212 (52.8%) p=0.451
+    +2: n= 377  margin  +4.19  spread said  +3.55  ATS backing the stacked side 194-182 (51.6%) p=0.640
+    +3: n= 290  margin  +6.40  spread said  +4.57  ATS backing the stacked side 158-131 (54.7%) p=0.236
+    +4: n= 221  margin  +5.94  spread said  +5.63  ATS backing the stacked side 118-101 (53.9%) p=0.354
+    +5: n= 267  margin  +6.30  spread said  +6.51  ATS backing the stacked side 134-133 (50.2%) p=0.782
+
+== 2. fitted score: weights learned on 2023-25, judged on 2025-26 only
+  learned weights (pts per unit): b2b -0.91, three_in_four -0.11, five_in_seven +0.24, rest_days +0.15, road_b2b +0.29, sos +0.22, bench_net +0.05, bench_ts -3.56, bench_share -14.42, depth +1.63, vac_ppg -0.02, usage_edge -0.03
+  vs 'spread is right': MSE +0.54 [-0.64,+1.75] p=0.378  (negative would mean it helps)
+  strongest 20% of fitted signals: 114-123 (48.1%) p=0.917
+  strongest 10% of fitted signals: 60-59 (50.4%) p=0.699
+  strongest 5% of fitted signals: 31-29 (51.7%) p=0.595
+  equal-weight score scaled on train (+0.117 pts/unit): MSE +0.05 [-0.89,+0.93] p=0.919
+
+
+PLAYERS: do matchup + usage + pace + defense edges compound?
+  +0.86 pts per 1 sd of the a-priori score (p=0.0000); compounding term p=0.069 (+0.005)
+  net count of favorable factors -> actual points vs season average:
+    -4: n=  5006  points vs average -1.15  over the average 39.6%
+    -3: n=  4709  points vs average -0.82  over the average 41.2%
+    -2: n=  6411  points vs average -0.57  over the average 43.4%
+    -1: n=  7697  points vs average +0.03  over the average 46.6%
+    +0: n=  7889  points vs average +0.25  over the average 48.3%
+    +1: n=  6959  points vs average +0.55  over the average 49.7%
+    +2: n=  6062  points vs average +0.84  over the average 51.6%
+    +3: n=  4503  points vs average +1.27  over the average 54.8%
+    +4: n=  3003  points vs average +1.55  over the average 56.4%
+    +5: n=  2507  points vs average +2.45  over the average 60.2%
